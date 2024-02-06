@@ -17,9 +17,13 @@ zodiac_dict = {
 }
 
 
-def get_info_about_zodiak_sign(request, sign_zodiak):
+def get_info_about_zodiak_sign(request, sign_zodiak: str):
     description = zodiac_dict.get(sign_zodiak, None)
     if description:
         return HttpResponse(description)
     else:
         return HttpResponseNotFound(f'страница не найдена - {sign_zodiak}')
+
+
+def get_info_about_zodiak_sign_by_number(request, sign_zodiak: int):
+    return HttpResponse(f'number {sign_zodiak}')
