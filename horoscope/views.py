@@ -18,6 +18,18 @@ zodiac_dict = {
 }
 
 
+def get_yyyy_converters(request, sign_zodiak):
+    return HttpResponse(f'вы передали число из 4х цифр - {sign_zodiak}')
+
+
+def get_my_float_converters(request, sign_zodiak):
+    return HttpResponse(f'вы передали вещественное число - {sign_zodiak}')
+
+
+def get_my_date_converters(request, sign_zodiak):
+    return HttpResponse(f'вы передали дату - {sign_zodiak}')
+
+
 def index(request):
     zodiacs = list(zodiac_dict)
     li_elements = ''
