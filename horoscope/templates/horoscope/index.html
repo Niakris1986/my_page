@@ -7,7 +7,7 @@
 <body>
     <ul>
         {% for zodiac in zodiacs %}
-            <li><a href="/horoscope/{{zodiac}}">{{zodiac}}</a></li>
+        <li><a href="{% url 'horoscope_name' sign_zodiak=zodiac %}">{{ zodiac|title}}</a></li>
         {% endfor %}
     </ul>
 </body>
