@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>гороскоп для {{ sign }}</title>
+    <title>гороскоп для {{ sign|capfirst }}</title>
 </head>
 <body>
     <h1>приложение гороскоп</h1>
-    <h2>{{description_zodiac}}</h2>
+
+    {% if description is None %}
+        <h2>неправильный знак зодиака - {{ sign|upper }}</h2>
+    {% else %}
+        <h2>{{description|title}}</h2>
+    {% endif %}
+
     <p>Экземпляр класса {{ my_class }} </p>
 </body>
 </html>
