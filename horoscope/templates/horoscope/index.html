@@ -7,7 +7,7 @@
 <body>
     <ul>
         {% for zodiac in zodiacs %}
-            <li>{{zodiac|title}}</li>
+            <li><a href="/horoscope/{{zodiac}}">{{zodiac}}</a></li>
         {% endfor %}
     </ul>
 </body>

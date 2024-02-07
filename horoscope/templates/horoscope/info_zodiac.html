@@ -8,7 +8,7 @@
     <h1>приложение гороскоп</h1>
 
     {% if description is None %}
-        <h2>неправильный знак зодиака - {{ sign|upper }}</h2>
+        <h2>неправильный знак зодиака - {{ sign }}</h2>
     {% else %}
         <h2>{{description|title}}</h2>
     {% endif %}

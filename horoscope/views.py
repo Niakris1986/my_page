@@ -35,7 +35,7 @@ def get_my_date_converters(request, sign_zodiak):
 def index(request):
     zodiacs = list(zodiac_dict)
     # f"<li> <a href='{redirect_path}'>{sign.title()} </a></li>"
-    context ={
+    context = {
         'zodiacs': zodiacs
     }
     return render(request, 'horoscope/index.html', context=context)
