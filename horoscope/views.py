@@ -34,16 +34,11 @@ def get_my_date_converters(request, sign_zodiak):
 
 def index(request):
     zodiacs = list(zodiac_dict)
-    li_elements = ''
-    for sign in zodiacs:
-        redirect_path = reverse('horoscope_name', args=[sign])
-        li_elements += f"<li> <a href='{redirect_path}'>{sign.title()} </a></li>"
-    response = f"""
-    <ol>
-        {li_elements}
-    </ol>
-    """
-    return HttpResponse(response)
+    # f"<li> <a href='{redirect_path}'>{sign.title()} </a></li>"
+    context ={
+        'zodiacs': zodiacs
+    }
+    return render(request, 'horoscope/index.html', context=context)
 
 
 @dataclass
@@ -60,7 +55,8 @@ def get_info_about_zodiak_sign(request, sign_zodiak: str):
     data = {
         'description': description,
         'sign': sign_zodiak,
-        'my_class': Person('Will', 55)
+        'my_class': Person('Will', 55),
+        'zodiac_dict': zodiac_dict,
     }
     return render(request, 'horoscope/info_zodiac.html', context=data)
 
